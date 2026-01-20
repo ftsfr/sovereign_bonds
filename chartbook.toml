@@ -1,0 +1,87 @@
+[config]
+type = "pipeline"
+chartbook_format_version = "0.0.2"
+
+[site]
+title = "Sovereign Bonds - EMBI"
+author = "Jeremy Bejarano"
+copyright = "2025"
+logo_path = ""
+favicon_path = ""
+
+[pipeline]
+id = "sovereign_bonds"
+pipeline_name = "JP Morgan EMBI Sovereign Bond Returns"
+pipeline_description = "Emerging market sovereign bond returns from JP Morgan EMBI indices"
+lead_pipeline_developer = "Jeremy Bejarano"
+contributors = ["Jeremy Bejarano"]
+runs_on = "Windows/Linux/MacOS (requires Bloomberg)"
+git_repo_URL = "https://github.com/ftsfr/sovereign_bonds"
+README_file_path = "./README.md"
+
+[notebooks]
+
+[notebooks.summary_embi_returns]
+notebook_name = "summary_embi_returns"
+notebook_description = "Summary statistics and visualization of EMBI returns"
+notebook_path = "_output/_notebook_build/summary_embi_returns.ipynb"
+is_publishable = true
+
+[charts]
+
+[dataframes]
+
+[dataframes.ftsfr_embi_returns]
+dataframe_name = "ftsfr_embi_returns"
+short_description_df = "Daily returns for JP Morgan EMBI emerging market bond indices"
+data_sources = ["Bloomberg JP Morgan EMBI"]
+data_providers = ["Bloomberg", "JP Morgan"]
+need_to_contact_provider = ["no"]
+data_on_pre_approved_list = ["No"]
+links_to_data_providers = ["https://bloomberg.com", "https://www.jpmorgan.com"]
+topic_tags = ["sovereign bonds", "emerging markets", "EMBI", "fixed income", "returns"]
+type_of_data_access = ["Bloomberg Terminal"]
+data_license = "Bloomberg"
+license_expiration_date = ""
+provider_contact_info = ""
+restriction_on_use = "No"
+how_is_pulled = "Pulled from Bloomberg via xbbg"
+path_to_parquet_data = "./_data/ftsfr_embi_returns.parquet"
+path_to_excel_data = ""
+date_col = "ds"
+dataframe_docs_str = """
+## JP Morgan EMBI Returns
+
+Daily returns for emerging market sovereign bond indices.
+
+### Columns
+
+| Column | Description |
+|--------|-------------|
+| unique_id | Index identifier (e.g., EMBI_Global, EMBI_Brazil) |
+| ds | Date |
+| y | Daily return (percentage) |
+
+### Methodology
+
+Returns are calculated from total return index levels:
+
+$$
+r_t = (P_t / P_{t-1} - 1) \\times 100
+$$
+
+### Aggregate Indices
+
+- EMBI_Global: JP Morgan EMBI Global Total Return
+- EMBI_Global_Diversified: JP Morgan EMBI Global Diversified
+- GBI_EM_Composite: Local currency EM bonds
+- CEMBI_Corporate: EM corporate bonds
+
+### Country Indices
+
+Brazil, Mexico, Russia, Turkey, South Africa, Indonesia, Colombia, China
+
+### Data Source
+
+Bloomberg JP Morgan EMBI index data
+"""
