@@ -1,0 +1,19 @@
+# Paper References for Sovereign Bonds Module
+
+[Borri2011]
+title = "Sovereign Risk Premia"
+authors = "Nicola Borri and Adrien Verdelhan"
+year = 2011
+description = "The paper explores how risk aversion among investors affects sovereign bond prices and default decisions in emerging markets."
+empirical_facts = [
+    "Sovereign bond excess returns range from 4% to 15%, with a spread of about 5% per year between low and high default probability countries.",
+    "Higher covariances between sovereign returns and U.S. equity or corporate bond returns result in higher average sovereign returns.",
+    "Market prices of risk are positive and significant, with pricing errors statistically indistinguishable from zero.",
+    "The market price of bond risk is higher than, but not statistically different from, the mean of U.S. BBB corporate bond excess returns.",
+]
+lessons_learned = [
+    "Risk aversion among investors significantly impacts sovereign bond prices and default decisions.",
+    "Sovereign bond returns are influenced by global economic conditions, particularly the correlation with U.S. market returns.",
+    "Emerging market debt exposes countries to U.S. business cycle risks, affecting borrowing costs and default probabilities.",
+]
+data_sources = ["JP Morgan's Emerging Market Bond Index (EMBI)", "Standard and Poor's credit ratings"]

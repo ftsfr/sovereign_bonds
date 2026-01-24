@@ -51,3 +51,17 @@ Results are in percentage.
 1. Ensure Bloomberg Terminal is running
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run pipeline: `doit`
+
+## Academic References
+
+### Primary Paper
+
+- **Borri and Verdelhan (2011)** - "Sovereign Risk Premia"
+  - Studies how risk aversion affects sovereign bond prices and defaults
+
+### Key Findings
+
+- Sovereign bond excess returns range from 4% to 15%
+- Higher correlation with US equity/corporate returns leads to higher returns
+- Market prices of risk are positive and significant
+- Emerging market debt exposes countries to US business cycle risk
