@@ -29,6 +29,36 @@ is_publishable = true
 
 [charts]
 
+[charts.embi_cumulative_returns]
+chart_name = "EMBI Sovereign Bond Cumulative Returns"
+short_description_chart = "Cumulative returns showing growth of $1 invested in emerging market sovereign bonds"
+dataframe_id = "ftsfr_embi_returns"
+path_to_html_chart = "./_output/embi_cumulative_returns.html"
+path_to_excel_chart = ""
+topic_tags = ["sovereign bonds", "emerging markets", "EMBI", "cumulative returns"]
+past_publications = []
+chart_docs_str = """
+## EMBI Sovereign Bond Cumulative Returns
+
+Cumulative returns showing growth of $1 invested in JP Morgan EMBI emerging market bond indices.
+
+### Indices
+
+- EMBI_Global: JP Morgan EMBI Global Total Return
+- EMBI_Global_Diversified: JP Morgan EMBI Global Diversified
+- GBI_EM_Composite: Local currency EM bonds
+- CEMBI_Corporate: EM corporate bonds
+- Country indices: Brazil, Mexico, Russia, Turkey, South Africa, Indonesia, Colombia, China
+
+### Calculation
+
+Cumulative return = Product of (1 + daily return) over time
+
+### Data Source
+
+Bloomberg JP Morgan EMBI index data
+"""
+
 [dataframes]
 
 [dataframes.ftsfr_embi_returns]
