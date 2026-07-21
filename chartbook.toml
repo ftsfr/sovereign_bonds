@@ -1,85 +1,57 @@
-[config]
-type = "pipeline"
-chartbook_format_version = "0.0.2"
-
-[site]
-title = "Sovereign Bonds - EMBI"
-author = "Jeremy Bejarano"
+[project]
+name = "JP Morgan EMBI Sovereign Bond Returns"
+description = "Emerging market sovereign bond returns from JP Morgan EMBI indices"
+contributors = [
+    "Jeremy Bejarano",
+]
+repo_url = "https://github.com/ftsfr/sovereign_bonds"
 copyright = "2025"
-logo_path = ""
-favicon_path = ""
-
-[pipeline]
-id = "sovereign_bonds"
-pipeline_name = "JP Morgan EMBI Sovereign Bond Returns"
-pipeline_description = "Emerging market sovereign bond returns from JP Morgan EMBI indices"
-lead_pipeline_developer = "Jeremy Bejarano"
-contributors = ["Jeremy Bejarano"]
-runs_on = "Windows/Linux/MacOS (requires Bloomberg)"
-git_repo_URL = "https://github.com/ftsfr/sovereign_bonds"
-README_file_path = "./README.md"
-
-[notebooks]
+os_compatibility = [
+    "Windows/Linux/MacOS (requires Bloomberg)",
+]
 
 [notebooks.summary_embi_returns]
-notebook_name = "summary_embi_returns"
-notebook_description = "Summary statistics and visualization of EMBI returns"
-notebook_path = "_output/summary_embi_returns.ipynb"
-is_publishable = true
-
-[charts]
-
-[charts.embi_cumulative_returns]
-chart_name = "EMBI Sovereign Bond Cumulative Returns"
-short_description_chart = "Cumulative returns showing growth of $1 invested in emerging market sovereign bonds"
-dataframe_id = "ftsfr_embi_returns"
-path_to_html_chart = "./_output/embi_cumulative_returns.html"
-path_to_excel_chart = ""
-topic_tags = ["sovereign bonds", "emerging markets", "EMBI", "cumulative returns"]
-past_publications = []
-chart_docs_str = """
-## EMBI Sovereign Bond Cumulative Returns
-
-Cumulative returns showing growth of $1 invested in JP Morgan EMBI emerging market bond indices.
-
-### Indices
-
-- EMBI_Global: JP Morgan EMBI Global Total Return
-- EMBI_Global_Diversified: JP Morgan EMBI Global Diversified
-- GBI_EM_Composite: Local currency EM bonds
-- CEMBI_Corporate: EM corporate bonds
-- Country indices: Brazil, Mexico, Russia, Turkey, South Africa, Indonesia, Colombia, China
-
-### Calculation
-
-Cumulative return = Product of (1 + daily return) over time
-
-### Data Source
-
-Bloomberg JP Morgan EMBI index data
-"""
-
-[dataframes]
+name = "summary_embi_returns"
+description = "Summary statistics and visualization of EMBI returns"
+path = "_output/summary_embi_returns.ipynb"
+publishable = true
 
 [dataframes.ftsfr_embi_returns]
-dataframe_name = "ftsfr_embi_returns"
-short_description_df = "Daily returns for JP Morgan EMBI emerging market bond indices"
-data_sources = ["Bloomberg JP Morgan EMBI"]
-data_providers = ["Bloomberg", "JP Morgan"]
-need_to_contact_provider = ["no"]
-data_on_pre_approved_list = ["No"]
-links_to_data_providers = ["https://bloomberg.com", "https://www.jpmorgan.com"]
-topic_tags = ["sovereign bonds", "emerging markets", "EMBI", "fixed income", "returns"]
-type_of_data_access = ["Bloomberg Terminal"]
-data_license = "Bloomberg"
-license_expiration_date = ""
-provider_contact_info = ""
-restriction_on_use = "No"
-how_is_pulled = "Pulled from Bloomberg via xbbg"
-path_to_parquet_data = "./_data/ftsfr_embi_returns.parquet"
-path_to_excel_data = ""
+name = "ftsfr_embi_returns"
+description = "Daily returns for JP Morgan EMBI emerging market bond indices"
+sources = [
+    "Bloomberg JP Morgan EMBI",
+]
+providers = [
+    "Bloomberg",
+    "JP Morgan",
+]
+contact_required = [
+    "no",
+]
+pre_approved = [
+    "No",
+]
+provider_links = [
+    "https://bloomberg.com",
+    "https://www.jpmorgan.com",
+]
+tags = [
+    "sovereign bonds",
+    "emerging markets",
+    "EMBI",
+    "fixed income",
+    "returns",
+]
+access_types = [
+    "Bloomberg Terminal",
+]
+license = "Bloomberg"
+restrictions = "No"
+pull_method = "Pulled from Bloomberg via xbbg"
+path = "./_data/ftsfr_embi_returns.parquet"
 date_col = "ds"
-dataframe_docs_str = """
+docs = """
 ## JP Morgan EMBI Returns
 
 Daily returns for emerging market sovereign bond indices.
@@ -110,6 +82,39 @@ $$
 ### Country Indices
 
 Brazil, Mexico, Russia, Turkey, South Africa, Indonesia, Colombia, China
+
+### Data Source
+
+Bloomberg JP Morgan EMBI index data
+"""
+
+[charts.embi_cumulative_returns]
+name = "EMBI Sovereign Bond Cumulative Returns"
+description = "Cumulative returns showing growth of $1 invested in emerging market sovereign bonds"
+dataframe = "ftsfr_embi_returns"
+path = "./_output/embi_cumulative_returns.html"
+tags = [
+    "sovereign bonds",
+    "emerging markets",
+    "EMBI",
+    "cumulative returns",
+]
+docs = """
+## EMBI Sovereign Bond Cumulative Returns
+
+Cumulative returns showing growth of $1 invested in JP Morgan EMBI emerging market bond indices.
+
+### Indices
+
+- EMBI_Global: JP Morgan EMBI Global Total Return
+- EMBI_Global_Diversified: JP Morgan EMBI Global Diversified
+- GBI_EM_Composite: Local currency EM bonds
+- CEMBI_Corporate: EM corporate bonds
+- Country indices: Brazil, Mexico, Russia, Turkey, South Africa, Indonesia, Colombia, China
+
+### Calculation
+
+Cumulative return = Product of (1 + daily return) over time
 
 ### Data Source
 
