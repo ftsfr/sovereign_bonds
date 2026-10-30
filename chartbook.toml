@@ -9,6 +9,10 @@ copyright = "2025"
 os_compatibility = [
     "Windows/Linux/MacOS (requires Bloomberg)",
 ]
+requires_chartbook = ">=0.3.0"
+
+[scripts]
+build = "doit"
 
 [notebooks.summary_embi_returns]
 name = "summary_embi_returns"
